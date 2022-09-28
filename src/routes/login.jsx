@@ -13,6 +13,8 @@ const LoginPage = (props) => {
     const logGoogleUser = async () => {
         const {user} = await signInWithGooglePopup()
         const userDocRef = await createUserDocFromAuth(user)
+        setCurrentUser(user)
+        navigate("/profile")
     }
     
     const {setCurrentUser} = useContext(UserContext)
